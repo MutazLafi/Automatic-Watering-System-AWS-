@@ -1,4 +1,5 @@
 #include <LiquidCrystal_I2C.h>
+
 #include <DHT.h>
 
 #define DHTPIN 9
@@ -46,7 +47,7 @@ void loop() {
   float TempData = DHTSensor.getTemp();
 
 
-  if (SoilData_After_Mapping >= 600) {
+  if (SoilData_After_Mapping >= 400) {
 
     lcd.setCursor(1, 0);
     lcd.print("Water Needed");
