@@ -27,7 +27,9 @@ LedsControl Leds;
 
 void setup() {
   // put your setup code here, to run once:
+  #ifdef DEBUG
   Serial.begin(9600);
+  #endif
   DHTSensor.begin();
   SoilSensor.begin(Soil_Water_Sensor_Pin);
 
