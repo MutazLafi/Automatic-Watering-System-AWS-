@@ -54,23 +54,29 @@ class SoilSensorControl {
 
 class LedsControl {
   public:
-    void beginLeds(int Led1Pin , int Led2Pin) {
+    void beginLeds(int Led1Pin , int Led2Pin , int Led3Pin) {
       pinMode(Led1Pin, OUTPUT);
       pinMode(Led2Pin, OUTPUT);
+      pinMode(Led3Pin, OUTPUT);
+      
     }
 
-    void FlashLeds(int Led1Pin , int Led2Pin) {
+    void FlashLeds(int Led1Pin , int Led2Pin , int Led3Pin = 2) {
       digitalWrite(Led1Pin , LOW);
       digitalWrite(Led2Pin , LOW);
+      digitalWrite(Led3Pin , LOW);
       delay(500);
       digitalWrite(Led1Pin , HIGH);
       digitalWrite(Led2Pin , HIGH);
+      digitalWrite(Led3Pin , HIGH);
       delay(500);
       digitalWrite(Led1Pin , LOW);
       digitalWrite(Led2Pin , LOW);
+      digitalWrite(Led3Pin , LOW);
       delay(500);
       digitalWrite(Led1Pin , HIGH);
       digitalWrite(Led2Pin , HIGH);
+      digitalWrite(Led3Pin , HIGH);
 
 
     }

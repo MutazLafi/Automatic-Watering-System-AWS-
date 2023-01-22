@@ -12,6 +12,7 @@ const int Soil_Water_Sensor_Pin = A0;
 
 const int Led1 = 8;
 const int Led2 = 7;
+const int BoxLed = 13;
 
 const int lcd_Width = 16;
 const int lcd_Height = 2;
@@ -36,7 +37,7 @@ void setup() {
 
   Serial.println("All Sensor Begin");
 
-  Leds.beginLeds(Led1, Led2);
+  Leds.beginLeds(Led1, Led2 , BoxLed);
 
   lcd.begin();
   lcd.backlight();
@@ -50,6 +51,7 @@ void setup() {
 
   digitalWrite(Led1 , HIGH);
   digitalWrite(Led2 , HIGH);
+  digitalWrite(BoxLed , HIGH);
 
   Serial.println("Leds Are Open");
 
@@ -74,7 +76,7 @@ void loop() {
     
     Serial.println("Water is nedeed now for The Plant");
     
-    Leds.FlashLeds(Led1 , Led2);
+    Leds.FlashLeds(Led1 , Led2 , BoxLed);
     delay(500);
     lcd.clear();
 
@@ -101,7 +103,7 @@ void loop() {
     lcd.print("Temp not Fine: ");
     Serial.println("Temperature isn't Good for The Plant");
     lcd.print(TempData);
-    Leds.FlashLeds(Led1 , Led2);
+    Leds.FlashLeds(Led1 , Led2 , BoxLed);
     delay(500);
     lcd.clear();
   }
