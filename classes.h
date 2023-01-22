@@ -51,3 +51,27 @@ class SoilSensorControl {
 
     }
 };
+
+class LedsControl {
+  public:
+    void beginLeds(int Led1Pin , int Led2Pin) {
+      pinMode(Led1Pin, OUTPUT);
+      pinMode(Led2Pin, OUTPUT);
+    }
+
+    void FlashLeds(int Led1Pin , int Led2Pin) {
+      digitalWrite(Led1Pin , LOW);
+      digitalWrite(Led2Pin , LOW);
+      delay(500);
+      digitalWrite(Led1Pin , HIGH);
+      digitalWrite(Led2Pin , HIGH);
+      delay(500);
+      digitalWrite(Led1Pin , LOW);
+      digitalWrite(Led2Pin , LOW);
+      delay(500);
+      digitalWrite(Led1Pin , HIGH);
+      digitalWrite(Led2Pin , HIGH);
+
+
+    }
+};
