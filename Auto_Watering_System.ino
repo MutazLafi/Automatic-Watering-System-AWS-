@@ -2,6 +2,7 @@
 
 #include <DHT.h>
 
+// Undefined Or Comment it To Hide Serial Results
 #define DEBUG
 
 #define DHTPIN 9
