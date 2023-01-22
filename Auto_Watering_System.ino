@@ -6,7 +6,7 @@
 #define DEBUG
 
 #define DHTPIN 9
-#define DHTTYPE DHT11
+#define DHTTYPE DHT11    
 
 const int Soil_Water_Sensor_Pin = A0;
 
