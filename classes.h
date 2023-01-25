@@ -11,7 +11,7 @@ class DHTSensorControl {
       float Temp = dht.readTemperature();
 
       if (isnan(Temp)) {
-        Serial.print("Error in temp");
+        Serial.println("Error in temp");
         return 0.0;
 
       } else {
@@ -22,15 +22,15 @@ class DHTSensorControl {
     }
 
     float getHumidity() {
-      float Hum = dht.readHumidity();
+      float Humidity = dht.readHumidity();
 
-      if (isnan(Hum)) {
+      if (isnan(Humidity)) {
         Serial.println("Error in Humidity");
         return 0.0;
 
       } else {
 
-        return Hum;
+        return Humidity;
       }
     }
 
@@ -41,27 +41,23 @@ class DHTSensorControl {
 class SoilSensorControl {
   public:
     void begin(int pin) {
-      pinMode(pin, INPUT);
+      pinMode(A0 , INPUT);
 
     }
 
-    int getData(int pin) {
-      int Data = analogRead(pin);
-      return Data;
-
-    }
+     
 };
 
 class LedsControl {
   public:
-    void beginLeds(int Led1Pin , int Led2Pin , int Led3Pin) {
+    void beginLeds(int Led1Pin , int Led2Pin = 2 , int Led3Pin = 2) {
       pinMode(Led1Pin, OUTPUT);
       pinMode(Led2Pin, OUTPUT);
       pinMode(Led3Pin, OUTPUT);
-      
+
     }
 
-    void FlashLeds(int Led1Pin , int Led2Pin , int Led3Pin = 2) {
+    void FlashLeds(int Led1Pin , int Led2Pin = 2 , int Led3Pin = 2) {
       digitalWrite(Led1Pin , LOW);
       digitalWrite(Led2Pin , LOW);
       digitalWrite(Led3Pin , LOW);
@@ -79,5 +75,24 @@ class LedsControl {
       digitalWrite(Led3Pin , HIGH);
 
 
+    }
+};
+
+
+class PumpControl {
+  public:
+
+    void begin(int PumpPin) {
+      pinMode(PumpPin, OUTPUT);
+      StopWatering(PumpPin);
+    }
+
+    void WaterPlanet(int PumpPin) {
+      digitalWrite(PumpPin, LOW);
+
+    }
+
+    void StopWatering(int PumpPin) {
+      digitalWrite(PumpPin, HIGH);
     }
 };
