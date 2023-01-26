@@ -1,1 +1,30 @@
-a
+Requirements For Project
+You Need A Laptop or PC To Put The Code into project
+
+1x Arduino Uno
+
+1x i2c lcd
+
+1x Box
+
+1x USB Cable 
+
+1x DHT Sensor
+
+30 - 60x wires
+
+1x Soil Sensor
+
+1x Relay
+
+3x Leds
+
+1x Water Pump
+
+1x Small Tube For The Pump
+
+1x a small holder for The Soil
+
+1x a vary small breadboard That Contains only - and +
+
+1x A small Holder For Water
