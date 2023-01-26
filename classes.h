@@ -1,4 +1,6 @@
-class DHTSensorControl {
+// The Extra Code For OOP
+
+class DHTSensorControl {  // Class For DHT
   public:
 
     void begin() {
@@ -38,17 +40,17 @@ class DHTSensorControl {
 
 
 
-class SoilSensorControl {
+class SoilSensorControl {  // Class For The Soil Sensor
   public:
     void begin(int pin) {
-      pinMode(A0 , INPUT);
+      pinMode(pin , INPUT);
 
     }
 
      
 };
 
-class LedsControl {
+class LedsControl {  // Class For The LEDS
   public:
     void beginLeds(int Led1Pin , int Led2Pin = 2 , int Led3Pin = 2) {
       pinMode(Led1Pin, OUTPUT);
@@ -79,7 +81,7 @@ class LedsControl {
 };
 
 
-class PumpControl {
+class PumpControl {  // class For WaterPump
   public:
 
     void begin(int PumpPin) {
